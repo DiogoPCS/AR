@@ -39,15 +39,6 @@
         <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 
-    <script>
-        const slider = document.getElementById("scaleRange");
-        const pokemon = document.getElementById("pokemon");
-
-        slider.addEventListener("input", () => {
-            let s = slider.value;
-            pokemon.setAttribute("scale", `${s} ${s} ${s}`);
-        });
-    </script>
 </body>
 </html>
 
