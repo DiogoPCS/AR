@@ -13,6 +13,10 @@ function staticLoadPlaces() {
                 lng: -47.868082,
             }
         }
+
+
+
+        
     ];
 }
 
