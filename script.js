@@ -22,3 +22,6 @@ function staticLoadPlaces() {
 //-23.330244, -47.868082
 
 
+
+
+
