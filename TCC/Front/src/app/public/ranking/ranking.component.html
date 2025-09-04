@@ -1,0 +1,58 @@
+<div class="header">
+  <h1 id="title">Ranking</h1>
+</div>
+
+<div class="content">
+
+  <div class="ranking-masculino">
+    <img src="images/homem-ranking.png" alt="homem-ranking" width="200px" height="250px">
+    <h2 class="titulo">MASCULINO</h2>
+    <ol>
+      <li *ngFor="let jogador of homensOrdenados; let i = index" [ngClass]="{
+        'primeiro': i === 0,
+        'segundo': i === 1,
+        'terceiro': i === 2 
+      }">
+        <span class="medalha">
+          {{ i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1 + '.' }}
+        </span>
+        {{ jogador.Nome }} - {{ jogador.qnt_pontos }} pts
+      </li>
+    </ol>
+  </div>
+
+  <div class="ranking-feminino">
+    <img src="images/mulher-ranking.png" alt="mulher-ranking" width="170px" height="250px">
+    <h2 class="titulo">FEMININO</h2>
+    <ol>
+      <li *ngFor="let jogador of mulheresOrdenadas; let i = index" [ngClass]="{
+        'primeiro': i === 0,
+        'segundo': i === 1,
+        'terceiro': i === 2
+      }">
+        <span class="medalha">
+          {{ i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1 + '.' }}
+        </span>
+        {{ jogador.Nome }} - {{ jogador.qnt_pontos }} pts
+      </li>
+    </ol>
+  </div>
+
+  <div class="ranking-infantil">
+    <img src="images/crianca-ranking.png" alt="crianca-ranking" width="280px" height="250px">
+    <h2 class="titulo">INFANTIL</h2>
+    <ol>
+      <li *ngFor="let jogador of criancasOrdenadas; let i = index" [ngClass]="{
+        'primeiro': i === 0,
+        'segundo': i === 1,
+        'terceiro': i === 2
+      }">
+        <span class="medalha">
+          {{ i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1 + '.' }}
+        </span>
+        {{ jogador.Nome }} - {{ jogador.qnt_pontos }} pts
+      </li>
+    </ol>
+  </div>
+
+</div>

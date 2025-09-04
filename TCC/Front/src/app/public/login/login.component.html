@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="TUDO">
+        <form (ngSubmit)="Logar()" class="cadastro" #cadastroForm="ngForm">
+            <h1>LOGIN</h1>
+
+            <div class="familiaFlinstones"><img src='images/familia-flinstones.png' alt="flinstones"></div>
+
+            <div class="componenteCadastro">
+                <label for="email" class="labelcadastro">Email</label><br>
+                <input name="email" [(ngModel)]="email" type="email" placeholder="Digite seu email">
+
+            </div>
+
+            <div class="componenteCadastro">
+                <label for="senha" class="labelcadastro">Senha</label><br>
+                <input name="senha" [(ngModel)]="senha" type="password" placeholder="Digite sua senha">
+            </div>
+
+            <p id="cadastrar"><a href="/cadastrar">Não tem uma conta? Cadastre-se</a></p>
+
+            <div class="botao-seta">
+                <button type="submit" [disabled]="!cadastroForm.valid">
+                    <img src="images/arrow.png" alt="flecha" width="60px" height="60px" id="seta">
+                </button>
+            </div>
+
+            <p *ngIf="mensagemErro" class="mensagem-erro">{{ mensagemErro }}</p>
+            <p *ngIf="mensagemSucesso" class="mensagem-sucesso">{{ mensagemSucesso }}</p>
+
+
+        </form>
+
+        <img id="borderRight" src="images/border.png" alt="">
+        <img id="borderLeft" src="images/border.png" alt="">
+    </div>
+</body>
+
+</html>

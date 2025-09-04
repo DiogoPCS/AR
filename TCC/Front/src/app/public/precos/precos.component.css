@@ -1,0 +1,157 @@
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+
+  body {
+      background-color: #111;
+      height: 100vh;
+      padding: 20px;
+  }
+
+  main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+  }
+
+  .tabela {
+      max-width: 1000px;
+      width: 100%;
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      letter-spacing: 3px;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+      font-weight: 700;
+  }
+
+  .tabela-header {
+      background: #ff6c00;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px 10px;
+  }
+
+  .tabela-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+  }
+
+  .tabela-header small {
+      display: block;
+      margin-top: 5px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #111;
+      text-align: end;
+      margin-right: 40px;
+      text-shadow: none;
+      margin-right: 100px;
+  }
+
+  .preco-box {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .preco {
+      padding: 25px 20px;
+      border-top: 2px solid #ff6c00;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      color: #fff;
+  }
+
+  .preco span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      margin-right: 150px;
+  }
+
+  .valor {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+  }
+
+  .por-hora {
+      font-size: 0.9rem;
+      margin-top: 5px;
+  }
+
+  .nota {
+      font-size: 1rem;
+      text-align: start;
+      padding: 17px;
+      color: #aaa;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: normal;
+      font-weight: 900;
+      margin-right: 90px;
+  }
+
+  .personagem {
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+      width: 200px;
+      max-width: 40%;
+  }
+
+  @media (max-width: 480px) {
+      .valor {
+          font-size: 2rem;
+      }
+
+      .personagem {
+          width: 80px;
+          right: -10px;
+      }
+
+      .nota {
+          margin-right: 60px;
+          font-size: 0.7rem;
+      }
+
+      .preco-box {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .preco span {
+          font-size: 1.5rem;
+          display: block;
+          margin-right: 0;
+          font-weight: 900;
+      }
+
+      .tabela-header h1 {
+          font-size: 1.8rem;
+          font-weight: 700;
+      }
+
+      .tabela-header small {
+          font-size: 1.2rem;
+          text-align: center;
+      }
+
+      .preco-box {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .preco {
+          padding: 25px 20px;
+          border-top: 2px solid #ff6c00;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+      }
+  }

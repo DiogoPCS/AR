@@ -1,0 +1,39 @@
+body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Remove espaçamento padrão entre células */
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px; /* Espaçamento interno das células */
+            text-align: left;
+        }
+
+        th {
+            background-color: #fd8904;
+        }
+
+        tr + tr {
+            margin-top: 10px; /* Espaçamento entre linhas (apenas visual) */
+        }
+.delete {
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #f84242;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.delete:hover {
+    background-color: #fd8484;
+}
+        

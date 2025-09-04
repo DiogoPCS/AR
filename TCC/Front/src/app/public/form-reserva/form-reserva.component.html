@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <h1>FORMULÁRIO DE RESERVA</h1>
+        <p>Selecione o dia que deseja reservar</p>
+        <div class="calendario">
+            <ion-datetime presentation="date" [min]="minDate" [max]="maxDate" (ionChange)="onDateChange($event)">
+            </ion-datetime>
+        </div>
+
+        <p *ngIf="mensagemFechado" class="mensagem-fechado">{{ mensagemFechado }}</p>
+
+        <div *ngIf="precoPorHora !== null">
+            <p>Preço por hora: <strong>R$ {{ precoPorHora }}</strong></p>
+        </div>
+
+
+        <h1>ESCOLHA SUA PISTA</h1>
+        <div class="pinos">
+            <ul>
+                <li *ngFor="let pista of [1, 2, 3, 4, 5, 6]">
+                    <button type="button" (click)="selecionarPista(pista)"
+                        [ngClass]="{ 'pista-selecionada': pistaSelecionada === pista }">
+                        <img src="images/pino.png" [alt]="'pino-pista-' + pista">
+                    </button><br>
+                    Pista {{ pista }}
+                </li>
+            </ul>
+
+        </div>
+
+                <p>Selecione o horário de inicio e fim da partida</p>
+
+        <p *ngIf="mensagemHorario" class="mensagem-fechado">{{ mensagemHorario }}</p>
+        <div>
+            <ul class="pistas">
+                <li class="pista" *ngFor="let hora of horarios" [ngClass]="{
+          'inicio': hora === horaInicio,
+          'fim': hora === horaFim
+        }" (click)="selecionarHorario(hora)">
+                    {{ hora }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="total">
+            <p>TOTAL =</p><br>
+            <p id="ValorFinal" class="ValorFinal"></p>
+        </div>
+
+        <button id="submit"><a href="/finalizarCompra">FINALIZAR COMPRA</a></button>
+    </form>
+</body>
+
+</html>

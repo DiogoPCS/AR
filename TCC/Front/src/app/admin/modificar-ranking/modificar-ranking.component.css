@@ -1,0 +1,265 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    background-color: #FF7518;
+    margin-top: 40px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    width: fit-content;
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 0.5px black;
+    font-size: 40px;
+    font-weight: 900;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.ranking-masculino,
+.ranking-feminino,
+.ranking-infantil {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    flex: 1 1 300px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ranking-masculino img,
+.ranking-feminino img,
+.ranking-infantil img {
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.titulo {
+    background-color: #ff6c0a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 15px auto;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    -webkit-text-stroke: 0.4px black;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.ranking-masculino ol,
+.ranking-feminino ol,
+.ranking-infantil ol {
+    border: 1px solid #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    overflow: hidden;
+    list-style: none;
+}
+
+.ranking-masculino ol li,
+.ranking-feminino ol li,
+.ranking-infantil ol li {
+    border-bottom: 1px solid #fff;
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.ranking-masculino ol li:last-child,
+.ranking-feminino ol li:last-child,
+.ranking-infantil ol li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.medalha {
+    width: 2.5rem;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.delete {
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #f84242;
+}
+
+.delete:hover {
+    background-color: #fd8484;
+}
+
+.edit {
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #3e5df6;
+}
+
+.edit:hover{
+    background-color: #8fa1fb;
+}
+
+.adicionar-btn button {
+    background-color: #000;
+    color: #fff;
+}
+
+.formulario-adicao {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.formulario-adicao input,
+.formulario-adicao select,
+.formulario-adicao button {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.toggle-form-btn {
+    margin-top: 20px;
+    background-color: #eee;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 20px 0;
+    width: 50%;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+}
+
+form input,
+form select,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #000;
+}
+
+form button {
+    background-color: #FF7518;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #f89a5c;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #title {
+        font-size: 32px;
+        padding: 10px 15px;
+    }
+
+    .titulo {
+        font-size: 22px;
+    }
+
+    .ranking-masculino ol li,
+    .ranking-feminino ol li,
+    .ranking-infantil ol li {
+        font-size: 20px;
+        line-height: 40px;
+    }
+}

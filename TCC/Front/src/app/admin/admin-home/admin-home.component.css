@@ -1,0 +1,100 @@
+body{
+    background-image: url(../../../../public/images/adminHome.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.shadow{
+    background-color: rgba(0, 0, 0, 0.563);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+main{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1%;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF7518;
+    width: 50%;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+    height: 100px;
+}
+
+.content p{
+    margin-top: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+    text-shadow: 3px 3px #0000006c;
+}
+
+main h1{
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: -30px;
+    margin-right: 35%;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 80%;
+        padding: 10px 15px;
+    }
+
+    .content p {
+        font-size: 1.5rem;
+    }
+
+    main h1 {
+        font-size: 32px;
+        margin-right: 10%;
+        text-align: left;
+    }
+
+    .content img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+        padding-top: 0.1rem;
+    }
+
+    main h1 {
+        font-size: 26px;
+        margin-right: 0;
+        align-self: flex-start;
+        padding-left: 20px;
+        margin-left: 20px;
+    }
+
+    .content img {
+        width: 40px;
+        margin-left: 10px;
+        align-self: flex-end;
+    }
+}

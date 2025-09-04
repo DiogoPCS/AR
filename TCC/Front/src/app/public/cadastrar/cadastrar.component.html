@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="TUDO">
+
+        <form (ngSubmit)="Cadastrar()" class="cadastro" #cadastroForm="ngForm">
+            <p *ngIf="mensagemSenhasDiferentes" class="mensagem-erro">{{ mensagemSenhasDiferentes }}</p>
+            <p *ngIf="mensagemEmailsDiferentes" class="mensagem-erro">{{ mensagemEmailsDiferentes }}</p>
+            <p *ngIf="mensagemSucesso" class="mensagem-sucesso">{{ mensagemSucesso }}</p>
+            <h1>CADASTRO</h1>
+
+            <div class="componenteCadastro">
+                <label for="nome" class="labelcadastro">Nome</label><br>
+                <input name="nome" type="text" placeholder="Digite seu nome" required [(ngModel)]="nome">
+            </div>
+
+            <div class="componenteCadastro">
+                <label for="telefone" class="labelcadastro">Telefone</label><br>
+                <input name="telefone" type="text" placeholder="Digite seu telefone" required [(ngModel)]="telefone">
+            </div>
+
+            <div class="componenteCadastro">
+                <label for="email" class="labelcadastro">Email</label><br>
+                <input name="email" type="email" placeholder="Digite seu email" required [(ngModel)]="email">
+
+            </div>
+
+            <div class="componenteCadastro">
+                <label for="emailVerificado" class="labelcadastro">Confirme seu email</label><br>
+                <input name="emailVerificado" type="email" placeholder="Confirme seu email" required [(ngModel)]="emailVerificado">
+
+            </div>
+
+            <div class="componenteCadastro">
+                <label for="senha" class="labelcadastro">Senha</label><br>
+                <input name="senha" type="password" placeholder="Digite sua senha" required [(ngModel)]="senha">
+            </div>
+
+            <div class="componenteCadastro">
+                <label for="senhaVerificada" class="labelcadastro">Confirme sua senha</label><br>
+                <input name="senhaVerificada" type="password" placeholder="Confirme sua senha" required
+                    [(ngModel)]="senhaVerificada">
+            </div>
+
+
+            <button type="submit" [disabled]="!cadastroForm.valid">Cadastrar</button>
+
+        </form>
+
+        <img id="borderRight" src="images/border.png" alt="">
+        <img id="borderLeft" src="images/border.png" alt="">
+
+    </div>
+</body>
+
+</html>

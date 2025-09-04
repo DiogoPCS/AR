@@ -1,0 +1,40 @@
+<ion-menu side="start" contentId="main-content" class="mobile-only">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item href="/login">Reserva</ion-item>
+      <ion-item href="/ranking">Ranking</ion-item>
+      <ion-item href="/#cardapio">Cardápio</ion-item>
+      <ion-item href="/#precos">Valores</ion-item>
+      <ion-item href="/comoFunciona">Como Funciona</ion-item>
+      <ion-item href="https://wa.me/5515996980717?text=Olá!%20Gostaria%20de%20agendar%20um%20evento.">Agende seu
+        Evento!</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div id="main-content">
+  <div class="header-container">
+    <img src="images/header.png" alt="header" class="header-img">
+
+    <ion-buttons slot="start" class="mobile-only" style="position: fixed; top: 10px; left: 10px; z-index: 10;">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ul class="menu">
+      <li><a href="/login">RESERVA</a></li>
+      <li><a href="/ranking">RANKING</a></li>
+      <li><a href="#cardapio">CARDÁPIO</a></li>
+      <li><a href="#precos">VALORES</a></li>
+      <li><a href="/comoFunciona">COMO FUNCIONA</a></li>
+      <li><a href="https://wa.me/5515996980717?text=Olá!%20Gostaria%20de%20agendar%20um%20evento." target="_blank"><img
+            src="images/dino-home.png" alt="dino-home" class="dino"></a></li>
+    </ul>
+
+    <img src="images/logo.png" alt="logo" class="logo-central">
+  </div>
+</div>

@@ -1,0 +1,60 @@
+
+    <div class="alterar-bloqueios">
+        <h1>ALTERAR BLOQUEIOS</h1>
+
+        <!-- Botão para adicionar -->
+        @if (!showForm) {
+        <button (click)="abrirForm()" id="btn-add">
+            + Adicionar Bloqueio
+        </button>
+        }
+
+        <!-- Formulário -->
+        @if (showForm) {
+            <ion-row>
+                <ion-col size="6">
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row>
+                                <ion-col size="6">
+                                    Início
+                                    <ion-datetime (ionChange)="setInicio($event)" locale="pt-br"></ion-datetime>
+                                </ion-col>
+                                <ion-col size="6">
+                                    Fim
+                                    <ion-datetime (ionChange)="setFim($event)" locale="pt-br"></ion-datetime>
+                                </ion-col>
+                            </ion-row>
+                            <!-- <input type="text" [(ngModel)]="this.novoBloqueio" name="nomePista" placeholder="Nome da pista" required /> -->
+                             <ion-item lines="none">
+                                <h3>Bloquear entre: {{ this.bloqueio.data_inicial }} e {{ this.bloqueio.data_final }}</h3>
+                                <ion-button (click)="cancelar()" color="danger" slot="end">
+                                    <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
+                                    Cancelar
+                                </ion-button>
+                                <ion-button (click)="salvarBloqueio()" color="success" slot="end">
+                                    <ion-icon [src]="'/svg/create-outline.svg'"></ion-icon>
+                                    Salvar
+                                </ion-button>
+                             </ion-item>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        }
+
+        <!-- Lista de bloqueios -->
+        <ul id="listaBloqueios">
+            <!-- @for (bloqueio of bloqueios; track $index) {
+            <li>
+                {{ bloqueio }}
+                <button (click)="excluirBloqueio($index)" class="delete">
+                    <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
+                </button>
+                <button (click)="editarBloqueio($index)" class="edit">
+                    <ion-icon [src]="'/svg/create-outline.svg'"></ion-icon>
+                </button>
+            </li>
+            } -->
+        </ul>
+    </div>

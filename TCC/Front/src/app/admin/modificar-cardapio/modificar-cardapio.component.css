@@ -1,0 +1,90 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+#cardapio {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+    padding: 40px;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 9px 8px 2px #00000030;
+    border: 1px solid #fff;
+}
+
+#cardapio h1 {
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+    color: #FF7518;
+    text-shadow: 2px 2px 3px #ffffff6f;
+}
+
+#cardapio label {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#cardapio input {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+#cardapio button {
+    padding: 15px;
+    border-radius: 8px;
+    margin-left: 48%;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    background-color: #FF7518;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 3px 3px #ffffff6f;
+}
+
+@media (max-width: 768px) {
+    #cardapio {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    #cardapio h1 {
+        font-size: 26px;
+    }
+
+    #cardapio label {
+        font-size: 20px;
+    }
+
+    #cardapio button {
+        margin-left: 35%;
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #cardapio h1 {
+        font-size: 22px;
+    }
+
+    #cardapio label {
+        font-size: 18px;
+    }
+
+    #cardapio button {
+        margin-left: 37%;
+        font-size: 16px;
+        padding: 10px;
+    }
+}

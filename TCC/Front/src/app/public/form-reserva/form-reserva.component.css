@@ -1,0 +1,263 @@
+body {
+    background-image: url(../../../../public/images/background-reserva.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.calendario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-datetime{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #000;
+    background-color: #e9e7e7;
+    box-shadow: 6px 5px #ffffff2c;
+}
+
+ion-datetime::part(calendar-day) {
+  color: #000;
+}
+
+ion-datetime::part(calendar-day today) {
+  color: #000;
+}
+
+ion-datetime::part(calendar-day):focus {
+    transition: 0.1s;
+  background-color: #ff741866;
+  box-shadow: 0px 0px 0px 4px #ff74186d;
+}
+
+ion-datetime.md::part(calendar-day active),
+ion-datetime.md::part(calendar-day active):focus {
+  background-color: #FF7518;
+  border-color: #FF7518;
+  color: #fff;
+}
+
+ion-datetime.md::part(calendar-day today) {
+  border-color: #000;
+}
+
+ion-datetime.ios::part(calendar-day active),
+ion-datetime.ios::part(calendar-day active):focus {
+  background-color: rgb(154 209 98 / 0.2);
+  color: #FF7518;
+}
+
+form {
+    background-color: #00000098;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: white;
+}
+
+form h1 {
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 1.9rem;
+}
+
+form p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pinos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0;
+    margin: 2rem auto;
+}
+
+.pinos ul li {
+    list-style: none;
+    text-align: center;
+    width: 33.33%;
+    max-width: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.pinos ul li:hover{
+    transform: rotate(5deg);
+}
+
+.pinos ul li button{
+    background-color: #00000007;
+}
+
+.pinos ul li button img {
+    width: 180px;
+    object-fit: cover;
+}
+
+.calendario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calendario p{
+    margin-bottom: -20px;
+}
+
+.total {
+    border: 1px solid #fff;
+    font-size: 1.4rem;
+    padding: 8px;
+    font-weight: 800;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 1.3rem;
+}
+
+#valor {
+    font-weight: bold;
+}
+
+#submit {
+    display: block;
+    font-weight: 700;
+    margin: 2rem auto 0 auto;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px #fff solid;
+    color: white;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background-color: #f0f0f052;
+}
+
+#submit a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+}
+
+.pistas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pistas .pista {
+    list-style: none;
+    border: 1px solid #fff;
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.mensagem-fechado {
+  background-color: #edd4d4;
+  color: #571515;
+  padding: 4px;
+  max-width: 350px;
+  border: 1px solid #e6c3c3;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 15px;
+  margin-left: 23%;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pista:hover {
+  background-color: #f0f0f052;
+}
+
+.pista.inicio {
+  background-color: #4caf50; 
+}
+
+.pista.fim {
+  background-color: #f44336;
+}
+
+
+@media (max-width: 768px) {
+    form h1 {
+        font-size: 1.5rem;
+    }
+
+    form p {
+        font-size: 1rem;
+    }
+
+    .pistas .pista {
+        width: 80px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .pinos ul li {
+        width: 50%;
+        max-width: 120px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pinos ul li {
+        width: 100%;
+        margin-left: -500px;
+    }
+
+    .total {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #valor {
+        margin-left: 0;
+    }
+}

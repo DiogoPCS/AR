@@ -1,0 +1,1 @@
+// Este arquivo é usado para definir variáveis de ambiente para o ambiente de desenvolvimento. Aqui você pode definir configurações que são específicas para o desenvolvimento, como a URL da API, chaves de API, etc.

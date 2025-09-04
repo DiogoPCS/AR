@@ -1,0 +1,88 @@
+
+    <div class="alterar-pistas">
+        <h1>ALTERAR PISTAS</h1>
+
+        <!-- Botão para adicionar -->
+        @if (!showForm) {
+        <button (click)="abrirForm()" id="btn-add">
+            + Adicionar Pista
+        </button>
+        }
+
+        <!-- Formulário -->
+        @if (showForm) {
+        <form (ngSubmit)="salvarPista()" id="form-add">
+            <input type="text" [(ngModel)]="novaPista" name="nomePista" placeholder="Nome da pista" required />
+            <button type="submit" id="salvar">Salvar</button>
+            <button type="button" (click)="cancelar()" id="cancelar">Cancelar</button>
+        </form>
+        }
+
+        <!-- Lista de pistas -->
+        <ul id="listaPistas">
+            @for (pista of pistas; track $index) {
+            <li>
+                {{ pista }}
+                <button (click)="excluirPista($index)" class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                        height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                        <path
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                    </svg></button>
+                <button (click)="editarPista($index)" class="edit"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                        height="30" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path
+                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd"
+                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                    </svg></button>
+            </li>
+            }
+        </ul>
+    </div>
+
+    <!-- Modelo de Exemplo com Ionic -->
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="4">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>
+                        Gerenciar Pista
+                    </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <!-- consultar as cores das classes https://ionicframework.com/docs/theming/colors ou https://ionicframework.com/docs/theming/color-generator-->
+                    <ion-button (click)="abrirForm()" color="primary">
+                        <ion-icon [src]="'/svg/add-outline.svg'"></ion-icon>
+                        Adicionar Pista
+                    </ion-button>
+                    <!-- Formulário -->
+                    @if (showForm) {
+                        <ion-item>
+                            <ion-input type="text" label="Nome da Pista" [(ngModel)]="novaPista" placeholder="Ex: Pista 1" required></ion-input>
+                            <ion-button (click)="salvarPista()" color="success">Salvar</ion-button>
+                            <ion-button (click)="cancelar()" color="warning">Cancelar</ion-button>
+                        </ion-item>
+                    }
+                    <ion-list>
+                        @for (pista of pistas; track $index) {
+                            <ion-item>
+                                <ion-label>
+                                    Pista 1
+                                </ion-label>
+                                    <ion-button slot="end" color="primary">
+                                        <ion-icon [src]="'/svg/create-outline.svg'"></ion-icon>
+                                    </ion-button>
+                                    <ion-button slot="end" color="danger">
+                                        <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
+                                    </ion-button>
+                                    <!-- Consultar o nome dos ícones -->
+                                    <!-- https://ionic.io/ionicons -->
+                            </ion-item>
+                        }
+                    </ion-list>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
