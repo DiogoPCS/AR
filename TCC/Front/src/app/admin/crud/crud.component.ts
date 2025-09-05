@@ -26,7 +26,6 @@ export class CrudComponent{
   lista_alunos: Aluno[] = [];
 
   filtrado_por_idade: Aluno[] = [];
-  
 
   constructor(
     public crudService: CrudService, //importando o serviço que irá comunicar a API, assim que a página é construída
