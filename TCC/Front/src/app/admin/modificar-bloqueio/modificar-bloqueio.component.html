@@ -3,14 +3,23 @@
         <h1>ALTERAR BLOQUEIOS</h1>
 
         <!-- Botão para adicionar -->
-        @if (!showForm) {
-        <button (click)="abrirForm()" id="btn-add">
-            + Adicionar Bloqueio
+        
+        <button (click)="abrirFormPeriodo()" id="btn-add">
+            @if(showFormPeriodo) { - }
+            @if(!showFormPeriodo) { + }
+            Bloquear Período
         </button>
-        }
+        
 
-        <!-- Formulário -->
-        @if (showForm) {
+        <!-- Botão para adicionar -->
+        <button (click)="abrirFormDiaSemana()" id="btn-add">
+            @if(showFormDiaSemana) { - }
+            @if(!showFormDiaSemana) { + }
+            Bloquear Dia da Semana
+        </button>
+
+        <!-- Formulário Período -->
+        @if (showFormPeriodo) {
             <ion-row>
                 <ion-col size="6">
                     <ion-card>
@@ -18,17 +27,56 @@
                             <ion-row>
                                 <ion-col size="6">
                                     Início
-                                    <ion-datetime (ionChange)="setInicio($event)" locale="pt-br"></ion-datetime>
+                                    <ion-datetime (ionChange)="setInicio($event)" locale="pt-br" [value]="this.bloqueio.data_inicial"></ion-datetime>
                                 </ion-col>
                                 <ion-col size="6">
                                     Fim
-                                    <ion-datetime (ionChange)="setFim($event)" locale="pt-br"></ion-datetime>
+                                    <ion-datetime (ionChange)="setFim($event)" locale="pt-br" [value]="this.bloqueio.data_final"></ion-datetime>
                                 </ion-col>
                             </ion-row>
                             <!-- <input type="text" [(ngModel)]="this.novoBloqueio" name="nomePista" placeholder="Nome da pista" required /> -->
                              <ion-item lines="none">
                                 <h3>Bloquear entre: {{ this.bloqueio.data_inicial }} e {{ this.bloqueio.data_final }}</h3>
-                                <ion-button (click)="cancelar()" color="danger" slot="end">
+                                <ion-button (click)="cancelarPeriodo()" color="danger" slot="end">
+                                    <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
+                                    Cancelar
+                                </ion-button>
+                                <ion-button (click)="salvarBloqueio()" color="success" slot="end">
+                                    <ion-icon [src]="'/svg/create-outline.svg'"></ion-icon>
+                                    Salvar
+                                </ion-button>
+                             </ion-item>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        }
+
+           <!-- Formulário Dia Semana-->
+        @if (showFormDiaSemana) {
+            <ion-row>
+                <ion-col size="6">
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row>
+                                <ion-col size="6">
+                                    Bloquear dia da semana
+                                    <ion-picker (ionChange)="selecionarDiaSemana($event)">
+                                        <ion-picker-column value="segunda">
+                                            <ion-picker-column-option value="segunda">segunda-feira</ion-picker-column-option>
+                                            <ion-picker-column-option value="terca">terça-feira</ion-picker-column-option>
+                                            <ion-picker-column-option value="quarta">quarta-feira</ion-picker-column-option>
+                                            <ion-picker-column-option value="quinta">quinta-feira</ion-picker-column-option>
+                                            <ion-picker-column-option value="sexta">sexta-feira</ion-picker-column-option>
+                                            <ion-picker-column-option value="sabado">sábado</ion-picker-column-option>
+                                            <ion-picker-column-option value="domingo">domingo</ion-picker-column-option>
+                                        </ion-picker-column>
+                                    </ion-picker>
+                                </ion-col>
+                            </ion-row>
+                            <!-- <input type="text" [(ngModel)]="this.novoBloqueio" name="nomePista" placeholder="Nome da pista" required /> -->
+                             <ion-item lines="none">
+                                <ion-button (click)="cancelarDiaSemana()" color="danger" slot="end">
                                     <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
                                     Cancelar
                                 </ion-button>
@@ -44,17 +92,34 @@
         }
 
         <!-- Lista de bloqueios -->
-        <ul id="listaBloqueios">
-            <!-- @for (bloqueio of bloqueios; track $index) {
-            <li>
-                {{ bloqueio }}
-                <button (click)="excluirBloqueio($index)" class="delete">
-                    <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
-                </button>
-                <button (click)="editarBloqueio($index)" class="edit">
-                    <ion-icon [src]="'/svg/create-outline.svg'"></ion-icon>
-                </button>
-            </li>
-            } -->
-        </ul>
+         <ion-row>
+            <ion-col size="auto">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>BLOQUEIO DE DIAS ESPECÍFICOS</ion-card-title>
+                    </ion-card-header>
+                   <ion-card-content>
+                       <ion-list>
+                           @for (bloqueio of this.bloqueios; track $index) {
+                               <ion-item>
+                                @if(bloqueio.dia_semana) {
+                                    Bloqueado toda: {{ bloqueio.dia_semana }}
+                                }
+                                @if(!bloqueio.dia_semana) {
+                                    Bloqueado: {{ bloqueio.data_inicial }} e {{ bloqueio.data_final }}
+                                }
+                                   <button (click)="excluirBloqueio($index)" class="delete">
+                                       <ion-icon [src]="'/svg/trash-outline.svg'"></ion-icon>
+                                   </button>
+                                   <button (click)="editarBloqueio($index)" class="edit">
+                                       <ion-icon [src]="'/svg/create-outline.svg'"></ion-icon>
+                                   </button>
+                               </ion-item>
+                           }
+                       </ion-list>
+                   </ion-card-content>
+                </ion-card>
+            </ion-col>
+         </ion-row>
+        
     </div>

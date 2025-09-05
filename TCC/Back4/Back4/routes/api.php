@@ -7,6 +7,7 @@ use App\Http\Controllers\pedidoController;
 use App\Http\Controllers\pistaController;
 use App\Http\Controllers\rankingController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\BloqueioController;
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
@@ -24,3 +25,7 @@ Route::apiResource('/pistas', pistaController::class);
 
 
 Route::apiResource('/rankings', rankingController::class);
+
+Route::post('/bloqueio/adicionar', [BloqueioController::class, 'adicionar']);
+
+Route::get('/bloqueio/todos', [BloqueioController::class, 'todos']);

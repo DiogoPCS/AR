@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('bloqueio', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('data_inicial');
-            $table->dateTime('data_final');
-            $table->string('dia_semana');
-            $table->integer('recorrencia');
+            $table->dateTime('data_inicial')->nullable();
+            $table->dateTime('data_final')->nullable();
+            $table->string('dia_semana')->nullable();
+            $table->integer('recorrencia')->nullable();
             $table->string('pista');
             $table->timestamps(); //cria automaticamente o campo created_at e updated_at
         });
