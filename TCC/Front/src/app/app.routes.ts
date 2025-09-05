@@ -17,6 +17,7 @@ import { ModificarCardapioComponent } from './admin/modificar-cardapio/modificar
 import { ModificarPistaComponent } from './admin/modificar-pista/modificar-pista.component';
 import { UserLogadoComponent } from './public/user-logado/user-logado.component';
 import { ModificarBloqueioComponent } from './admin/modificar-bloqueio/modificar-bloqueio.component';
+import { CrudComponent } from './admin/crud/crud.component';
 
 export const routes: Routes = [
     {
@@ -90,5 +91,9 @@ export const routes: Routes = [
     {
         path: "verificarReservas",
         component: VerificarReservasComponent
+    },
+    {
+        path: "crud",
+        component: CrudComponent
     }
 ];

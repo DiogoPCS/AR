@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonDatetime } from '@ionic/angular/standalone';
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Horario } from './reserva.inteface';
 
 @Component({
   selector: 'app-form-reserva',
