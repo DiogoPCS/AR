@@ -1,0 +1,68 @@
+h1 {
+    color: #FF7518;
+    font-weight: 900;
+    margin-left: 2.3%;
+}
+
+#listaBloqueios li {
+    border: 1px solid #000000;
+    list-style: none;
+    padding: 8px;
+    color: #000000;
+    background-color: #fffdfd;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.delete {
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #f84242;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.delete:hover {
+    background-color: #fd8484;
+}
+
+.edit {
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #3e5df6;
+}
+
+.edit:hover {
+    background-color: #8fa1fb;
+}
+
+#btn-add {
+    margin-left: 2.3%;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input{
+    margin-left: 2.3%;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #000000;
+}
+
+#salvar {
+    border-radius: 5px;
+    padding: 7px;
+    background-color: #41d60b;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#cancelar {
+    border-radius: 5px;
+    padding: 7px;
+    background-color: #f84242;
+    margin-right: 20px;
+    margin-left: 20px;
+}

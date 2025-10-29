@@ -1,0 +1,69 @@
+<!-- Se quiser usar html ou bootstrap, basta substituiro o IONIC por HTML -->
+
+<!-- CADATRAR OS DADOS NO BANCO VIA API-->
+ <ion-row>
+    <ion-col size="6">
+        <ion-card>
+            <ion-card-content>
+                <ion-item>
+                    <ion-input label="Nome" [(ngModel)]="this.aluno.nome"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input label="Idade" [(ngModel)]="this.aluno.idade"></ion-input>
+                </ion-item>
+                <ion-item lines="none">
+                    <ion-button color="success" (click)="salvar()">Salvar</ion-button>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+ </ion-row>
+
+ <ion-row>
+    <ion-col size="6">
+        <ion-card>
+            <ion-card-content>
+                <ion-item>
+                    <ion-input label="Idade" [(ngModel)]="this.aluno.idade"></ion-input>
+                </ion-item>
+                <ion-item lines="none">
+                    <ion-button color="success" (click)="filtrarPorIdade()">Filtrar</ion-button>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+ </ion-row>
+
+
+ <!-- EXIBIR TODOS OS DADOS DO BANCO VIA API -->
+ <ion-row>
+    <ion-col size="6">
+        <ion-card>
+            <ion-card-content>
+                <ion-item lines="none">
+                    <ion-button color="success" (click)="todos()">Exibir Todos</ion-button>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+    </ion-col>
+ </ion-row>
+
+ <!-- EXIBIR TODOS OS DADOS DO BANCO VIA API -->
+ <ion-row>
+    <ion-col size="6">
+        <ion-list>
+            <ion-item>
+                Listagem dos Dados
+            </ion-item>
+            @for (aluno of this.lista_alunos; track $index) {
+                <ion-item>
+                    <h3>Nome do Aluno : {{ aluno.nome }} - {{ aluno.idade }} anos</h3>
+                    <ion-button (click)="selecionar(aluno)" slot="end">Editar</ion-button>
+                    <ion-button (click)="remover(aluno)" slot="end">Remover</ion-button>
+                </ion-item>
+            }
+        </ion-list>
+    </ion-col>
+ </ion-row>
+
+  

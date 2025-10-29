@@ -22,6 +22,12 @@ export class FormReservaComponent {
   feriadosFixos = ['01-01', '04-21', '05-01', '08-11', '09-07', '10-12', '11-02', '11-15', '12-08', '12-25'];
   feriadosMoveis: Date[] = [];
 
+  //horarios: Horario[] = []; utilizando a interface
+  // horario: Horario = {
+  //   hora_inicial: null,
+  //   hora_final: null
+  // }
+
   horarios: string[] = [];
   horaInicio: string | null = null;
   horaFim: string | null = null;
